@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="athlete_leg">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.096012 -4.1961E-09 0.0955"
+        rpy="0 0 0" />
+      <mass
+        value="3.0935" />
+      <inertia
+        ixx="0.022612"
+        ixy="-1.6978E-11"
+        ixz="1.4148E-11"
+        iyy="0.052093"
+        iyz="-5.7139E-11"
+        izz="0.051688" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="femur_link">
+    <inertial>
+      <origin
+        xyz="0.2493 -0.018679 5.8066E-18"
+        rpy="0 0 0" />
+      <mass
+        value="9.5999" />
+      <inertia
+        ixx="0.093283"
+        ixy="0.030594"
+        ixz="6.5075E-17"
+        iyy="0.49931"
+        iyz="-3.5087E-18"
+        izz="0.47562" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/femur_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/femur_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="femur_joint"
+    type="revolute">
+    <origin
+      xyz="0.191 0 0.0955"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="femur_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="100"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="tibia_link">
+    <inertial>
+      <origin
+        xyz="0.25893 -0.038778 9.2256E-05"
+        rpy="0 0 0" />
+      <mass
+        value="6.9601" />
+      <inertia
+        ixx="0.068448"
+        ixy="0.032772"
+        ixz="-1.2097E-05"
+        iyy="0.28234"
+        iyz="2.7265E-06"
+        izz="0.26523" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/tibia_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/tibia_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tibia_joint"
+    type="revolute">
+    <origin
+      xyz="0.4986 -0.037358 0"
+      rpy="0 0 0" />
+    <parent
+      link="femur_link" />
+    <child
+      link="tibia_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="100"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="pwheel_link">
+    <inertial>
+      <origin
+        xyz="0.10237 -0.017393 4.0783E-17"
+        rpy="0 0 0" />
+      <mass
+        value="6.3303" />
+      <inertia
+        ixx="0.045039"
+        ixy="0.00021626"
+        ixz="-3.6824E-18"
+        iyy="0.046275"
+        iyz="9.9812E-18"
+        izz="0.037303" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/pwheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/pwheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pwheel_joint"
+    type="revolute">
+    <origin
+      xyz="0.44504 -0.066659 0"
+      rpy="0 0 0" />
+    <parent
+      link="tibia_link" />
+    <child
+      link="pwheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="100"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="rwheel_link">
+    <inertial>
+      <origin
+        xyz="2.4925E-14 -6.5088E-15 0.036219"
+        rpy="0 0 0" />
+      <mass
+        value="2.8914" />
+      <inertia
+        ixx="0.026433"
+        ixy="0.00010109"
+        ixz="-4.3368E-18"
+        iyy="0.02702"
+        iyz="-1.0828E-17"
+        izz="0.012233" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/rwheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/rwheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rwheel_joint"
+    type="revolute">
+    <origin
+      xyz="0.22182 -0.037689 0"
+      rpy="1.5708 0 1.4025" />
+    <parent
+      link="pwheel_link" />
+    <child
+      link="rwheel_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="wheel_link">
+    <inertial>
+      <origin
+        xyz="4.3743E-14 4.2449E-15 -0.06"
+        rpy="0 0 0" />
+      <mass
+        value="4.7013" />
+      <inertia
+        ixx="0.014957"
+        ixy="-4.0387E-18"
+        ixz="-4.3368E-19"
+        iyy="0.014957"
+        iyz="1.5179E-18"
+        izz="0.02163" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://athlete_leg/meshes/wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.059177 -0.0099024 0.21"
+      rpy="1.5708 -1.5428 1.405" />
+    <parent
+      link="rwheel_link" />
+    <child
+      link="wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="1000"
+      velocity="0.5" />
+  </joint>
+</robot>
