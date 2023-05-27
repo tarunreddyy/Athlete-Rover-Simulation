@@ -39,7 +39,7 @@ This will launch Gazebo with the Athlete Rover model loaded in.
 
 Athlete Rover in Gazebo
 
-[![Athlete Rover in Action]](https://youtu.be/uFLJR89Jcns "Athlete Rover in Action")
+[Athlete Rover in Action](https://youtu.be/uFLJR89Jcns "Athlete Rover in Action")
 
 - Running the script
 
